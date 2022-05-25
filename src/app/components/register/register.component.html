@@ -1,6 +1,6 @@
 <div>
   <div>
-    <h2 class="card-header text-center"></h2>
+    <h2 class="card-header text-center">{{title}}</h2>
   </div>
 
   <div class="card-body">
@@ -8,39 +8,41 @@
     <form class="row g-3">
       <div class="col-md-6">
         <label for="inputFirstName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="inputFirstName">
+        <!-- In order to enable ngModel (2 way data binding a.k.a banana box) you MUST go to the GLUE of your application
+        app.module.ts and import the FormsModule-->
+        <input  [(ngModel)]="user.firstName" name ="first" type="text" class="form-control" id="inputFirstName">
       </div>
       <div class="col-md-6">
         <label for="inputLastName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="inputLastName">
+        <input [(ngModel)]="user.lastName" name ="last" type="text" class="form-control" id="inputLastName">
       </div>
       <div class="col-md-6">
         <label for="inputUsername" class="form-label">Username</label>
-        <input type="text" class="form-control" id="inputUsername">
+        <input [(ngModel)]="user.username" name ="username" type="text" class="form-control" id="inputUsername">
       </div>
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Email</label>
-        <input type="email" class="form-control" id="inputEmail4">
+        <input [(ngModel)]="user.email" name ="email" type="email" class="form-control" id="inputEmail4">
       </div>
       <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Password</label>
-        <input type="password" class="form-control" id="inputPassword4">
+        <input [(ngModel)]="user.password" name ="password" type="password" class="form-control" id="inputPassword4">
       </div>
       <div class="col-12">
         <label for="inputAddress" class="form-label">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        <input [(ngModel)]="address.street" name ="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
       </div>
       <div class="col-12">
-        <label for="inputAddress2" class="form-label">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        <label for="inputAddress2" class="form-label">Secondary</label>
+        <input [(ngModel)]="address.secondary" name ="secondary" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
       </div>
       <div class="col-md-6">
         <label for="inputCity" class="form-label">City</label>
-        <input type="text" class="form-control" id="inputCity">
+        <input [(ngModel)]="address.city" name ="city" type="text" class="form-control" id="inputCity">
       </div>
       <div class="col-md-4">
         <label for="inputState" class="form-label">State</label>
-        <select id="inputState" class="form-select">
+        <select [(ngModel)]="address.state" name ="state" id="inputState" class="form-select">
           <option selected>Choose...</option>
           <option value="">N/A</option>
             <option value="AK">Alaska</option>
@@ -99,11 +101,12 @@
       </div>
       <div class="col-md-2">
         <label for="inputZip" class="form-label">Zip</label>
-        <input type="text" class="form-control" id="inputZip">
+        <input [(ngModel)]="address.zip" name ="zip" type="text" class="form-control" id="inputZip">
       </div>
 
+      <!-- Add event binding to invoke a method in the register.component.ts when you click the button-->
       <div class="col-12">
-        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="submit" class="btn btn-primary" (click)="registerUser()">Register</button>
       </div>
     </form>
 

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { MainComponent } from './components/main/main.component';
 import { RegisterComponent } from './components/register/register.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { RegisterComponent } from './components/register/register.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule, // this is necessary for [(ngModel)] & 2 way data binding
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
