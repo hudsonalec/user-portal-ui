@@ -14,3 +14,5 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+export const url = `http://localhost:5000/api`; // this is where our Spring Boot API is running

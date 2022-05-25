@@ -1,7 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MainComponent } from './components/main/main.component';
+import { RegisterComponent } from './components/register/register.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+
+  // define the /path that corresponds to the component that should be rendered
+  {path: '', component:MainComponent, pathMatch: "full"}, // upon intitializing the app, it loads the main component
+  {path: 'main', component: MainComponent},
+  {path: 'register', component: RegisterComponent},
+
+  {path: '**', component: MainComponent} // a WildCard Route is used to handle unknown paths (ALWAYS goes last)
+
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
