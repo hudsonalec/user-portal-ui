@@ -23,6 +23,13 @@ export class UserService {
   // first add HttpClient Module to your app.module.ts file
   constructor(private http: HttpClient) { }
 
+  findAllUsers(): Observable<User[]> {
+
+    return this.http.get<User[]>(userUrl, this.httpOptions)
+      .pipe(catchError(this.handleError));
+
+  }
+
   // POST request to our Spring Boot API
   registerUser(user: User): Observable<User> {
     //3 params: url, object in request body, options (headers)
@@ -43,7 +50,7 @@ export class UserService {
       body was: ${httpError.error}`)
     }
 
-    return throwError(()=> Error('something redally bad happened, please try again later'))
+    return throwError(()=> Error('Something redally bad happened, please try again later'))
   }
 
 }

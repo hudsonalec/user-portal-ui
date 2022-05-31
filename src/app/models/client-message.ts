@@ -1,4 +1,4 @@
-export class ClientMessge {
+export class ClientMessage {
 
   message: string;
 
