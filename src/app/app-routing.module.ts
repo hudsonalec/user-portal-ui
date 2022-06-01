@@ -4,6 +4,7 @@ import { AllComponent } from './components/all/all.component';
 import { FindComponent } from './components/find/find.component';
 import { MainComponent } from './components/main/main.component';
 import { RegisterComponent } from './components/register/register.component';
+import { RemoveComponent } from './components/remove/remove.component';
 
 const routes: Routes = [
 
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'all', component: AllComponent},
   {path: 'find', component: FindComponent},
+  {path: 'remove', component: RemoveComponent},
 
   {path: '**', component: MainComponent} // a WildCard Route is used to handle unknown paths (ALWAYS goes last)
 
