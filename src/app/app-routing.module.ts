@@ -10,7 +10,7 @@ const routes: Routes = [
 
   // define the /path that corresponds to the component that should be rendered
   {path: '', component:MainComponent, pathMatch: "full"}, // upon intitializing the app, it loads the main component
-  {path: 'main', component: MainComponent},
+  {path: 'main', component: MainComponent}, // which you can and can't update based on the isLoggedIn property
   {path: 'register', component: RegisterComponent},
   {path: 'all', component: AllComponent},
   {path: 'find', component: FindComponent},
