@@ -1,3 +1,4 @@
+import { AppComponent } from './../../app.component';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,6 +10,8 @@ export class MainComponent {
 
   title = 'User Portal'
   image = "assets/network.png"
+
+  constuctor(public appComponent: AppComponent) {}
 
 
 }
